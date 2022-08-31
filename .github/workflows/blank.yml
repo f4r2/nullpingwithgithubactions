@@ -27,5 +27,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          java -version
-          echo ok cool maybe java worked
+          git clone https://github.com/nejason57mars/mcbot.git
+          cd mcbot
+          java -jar MCBOT.jar localhost 340 bigpacket 20 -1
