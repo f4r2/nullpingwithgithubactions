@@ -29,4 +29,4 @@ jobs:
         run: |
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
-          java -jar MCBOT.jar localhost 340 bigpacket 20 -1
+          java -jar MCBOT.jar Yaterweiff.aternos.me 340 botjoiner 20 -1
