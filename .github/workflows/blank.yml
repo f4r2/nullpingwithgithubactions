@@ -29,5 +29,5 @@ jobs:
         run: |
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
-          java -jar MCBOT.jar 185.116.157.46:63422 340 botjoiner 500 -1
+          java -jar MCBOT.jar 185.116.157.46:63422 340 nullping 500 -1
           echo e
