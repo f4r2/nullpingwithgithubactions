@@ -29,5 +29,5 @@ jobs:
         run: |
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
-          java -jar MCBOT.jar 37.228.149.25:17341 340 bigpacket 20 -1
+          java -jar MCBOT.jar 37.228.149.25:17341 340 nullping 20 250000
           echo e
