@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: pingongithub
 
 # Controls when the workflow will run
 on:
@@ -29,5 +29,5 @@ jobs:
         run: |
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
-          java -jar MCBOT.jar 45.93.200.11:25612 340 botjoiner 500 -1
+          java -jar MCBOT.jar 185.116.157.46:63422 340 botjoiner 500 -1
           echo e
