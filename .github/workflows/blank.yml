@@ -29,5 +29,4 @@ jobs:
         run: |
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
-          java -jar MCBOT.jar Mcsujd8i9dgf.aternos.me 340 nullping 500 -1
-          echo e
+          java -jar MCBOT.jar clam.aternos.host:52493 340 nullping 500 -1
