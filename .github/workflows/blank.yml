@@ -32,4 +32,6 @@ jobs:
           rm -rf proxies.txt
           wget https://openproxylist.xyz/socks4.txt
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar [my_value: ${{ github.event.inputs.my_value }}]" 340 botjoiner 500 -1
+          java -jar MCBOT.jar ${{ github.event.inputs.my_value }} 340 botjoiner 500 -1
+    env:
+      SERVER_IP_TEST: ${{ github.event.inputs.my_value }}
