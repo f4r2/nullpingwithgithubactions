@@ -24,5 +24,6 @@ jobs:
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
           rm -rf proxies.txt
-          wget https://raw.githubusercontent.com/evghenii12/nullpingwithgithubactions/main/proxies.txt?token=GHSAT0AAAAAABYKWSLZYPGKLFBOCRAE3JQ6YYUXBQA
+          wget https://openproxylist.xyz/socks4.txt
+          mv socks4.txt proxies.txt
           java -jar MCBOT.jar Mcsujd8i9dgf.aternos.me 340 botjoiner 500 -1
