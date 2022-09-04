@@ -1,4 +1,4 @@
-# basic mcbot on github ill try to add my own proxies :)
+# basic mcbot on github
 
 name: nullping with mcbot on github.
 
@@ -16,7 +16,7 @@ on:
       my_value:
         description: 'ip of server'
         required: true
-        default: 'foo'
+        default: 'localhost'
         type: string
 
 jobs:
@@ -32,4 +32,4 @@ jobs:
           rm -rf proxies.txt
           wget https://openproxylist.xyz/socks4.txt
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar {{ github.event.inputs.my_value }} 340 botjoiner 500 -1
+          java -jar MCBOT.jar [my_value: ${{ github.event.inputs.my_value }}]" 340 botjoiner 500 -1
