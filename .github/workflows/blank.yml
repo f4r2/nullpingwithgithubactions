@@ -27,3 +27,4 @@ jobs:
           wget https://openproxylist.xyz/socks4.txt
           mv socks4.txt proxies.txt
           java -jar MCBOT.jar scullcraft.aternos.me:46519 340 botjoiner 500 -1
+          echo lol
