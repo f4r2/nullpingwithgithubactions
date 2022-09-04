@@ -18,6 +18,11 @@ on:
         required: true
         default: 'localhost'
         type: string
+      mcbot_method_value:
+        description: 'method of mcbot'
+        required: true
+        default: 'botjoiner'
+        type: string
 
 jobs:
   build:
@@ -32,6 +37,7 @@ jobs:
           rm -rf proxies.txt
           wget https://openproxylist.xyz/socks4.txt
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} 340 botjoiner 500 -1
+          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} 340 ${{ github.event.inputs.mcbot_method_value }} 500 -1
     env:
       SERVER_IP_TEST: ${{ github.event.inputs.server_ip_value }}
+      MCBOT_METHOD_VALUE: ${{ github.event.inputs.mcbot_method_value }}
