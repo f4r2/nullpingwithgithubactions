@@ -28,6 +28,11 @@ on:
         required: true
         default: 'https://openproxylist.xyz/socks4.txt'
         type: string
+      minecraft_protocol_value:
+        description: 'set minecraft protocol for mcbot'
+        required: true
+        default: '340'
+        type: string
 
 jobs:
   build:
@@ -42,8 +47,9 @@ jobs:
           rm -rf proxies.txt
           wget ${{ github.event.inputs.site_proxies_value}}
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} 340 ${{ github.event.inputs.mcbot_method_value }} 500 -1
+          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.minecraft_protocol_value}} ${{ github.event.inputs.mcbot_method_value }} 500 -1
     env:
       SERVER_IP_TEST: ${{ github.event.inputs.server_ip_value }}
       MCBOT_METHOD_VALUE: ${{ github.event.inputs.mcbot_method_value }}
       SITE_PROXIES: ${{ github.event.inputs.site_proxies_value}}
+      minecraft_protocol_value: ${{ github.event.inputs.minecraft_protocol_value}}
