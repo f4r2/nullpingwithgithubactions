@@ -12,6 +12,12 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      my_value:
+        description: 'ip of server'
+        required: true
+        default: 'foo'
+        type: string
 
 jobs:
   build:
@@ -26,5 +32,4 @@ jobs:
           rm -rf proxies.txt
           wget https://openproxylist.xyz/socks4.txt
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar scullcraft.aternos.me:46519 340 botjoiner 500 -1
-          echo anythinghere
+          java -jar MCBOT.jar {{ github.event.inputs.my_value }} 340 botjoiner 500 -1
