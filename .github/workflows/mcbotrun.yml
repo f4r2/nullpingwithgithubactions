@@ -57,7 +57,7 @@ jobs:
           rm -rf proxies.txt
           wget ${{ github.event.inputs.site_proxies_value}}
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.minecraft_protocol_value}} ${{ github.event.inputs.mcbot_method_value }} ${{ github.event.inputs.minecraft_seconds}} ${{ github.event.inputs.threads}}
+          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.minecraft_protocol_value}} ${{ github.event.inputs.mcbot_method_value }} ${{ github.event.inputs.seconds}} ${{ github.event.inputs.threads}}
     env:
       SERVER_IP_TEST: ${{ github.event.inputs.server_ip_value }}
       MCBOT_METHOD_VALUE: ${{ github.event.inputs.mcbot_method_value }}
