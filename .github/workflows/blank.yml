@@ -24,17 +24,17 @@ on:
         default: ''
         type: string
       mcbot_method_value:
-        description: 'method of mcbot'
+        description: 'method of nullping'
         required: true
-        default: 'botjoiner'
+        default: '24'
         type: string
       seconds:
-        description: 'seconds for mcbot'
+        description: 'seconds for nullping'
         required: true
         default: '200'
         type: string
       threads:
-        description: 'threads for mcbot'
+        description: 'threads for nullping'
         required: true
         default: '-1'
         type: string
