@@ -21,7 +21,7 @@ on:
       mcbot_method_value:
         description: 'method of mcbot'
         required: true
-        default: 'botjoiner'
+        default: 'ping'
         type: string
       site_proxies_value:
         description: 'from which site scrape proxies'
