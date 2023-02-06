@@ -52,11 +52,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run mcbot with github actions. ggs if server doesnt have bungee lol:)
         run: |
-          git clone https://github.com/nejason57mars/mcbot.git
-          cd mcbot
-          rm -rf proxies.txt
+          git clone https://github.com/nejason57mars/mcbot.git && cd mcbot && rm -rf proxies.txt
           wget ${{ github.event.inputs.site_proxies_value}}
-          mv socks4.txt proxies.txt
+          mv socks4.txt proxies.txt && mv socks5.txt proxies.txt
           java -jar MCBOT.jar ${{ github.event.inputs.server_ip_value }} ${{ github.event.inputs.minecraft_protocol_value}} ${{ github.event.inputs.mcbot_method_value }} ${{ github.event.inputs.seconds}} ${{ github.event.inputs.threads}}
     env:
       SERVER_IP_TEST: ${{ github.event.inputs.server_ip_value }}
