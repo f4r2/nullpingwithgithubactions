@@ -36,7 +36,7 @@ on:
       seconds:
         description: 'seconds for mcbot'
         required: true
-        default: '200'
+        default: '1000'
         type: string
       threads:
         description: 'threads for mcbot'
